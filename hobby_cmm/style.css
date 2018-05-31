@@ -1,0 +1,79 @@
+
+/*Colby McDevitt; CPSC 247; week 1 assignemnt; May 17, 2018 */
+html {
+    font-family: Arial;
+    background-color: darkgrey;
+}
+
+h1 {
+    font-family: 'Chalkduster';
+    width: 40%;
+    height: 40px;
+    margin: auto;
+    float: top;
+    align-content: center;
+    color: navy;
+    padding-bottom: 25px;
+}
+
+body {
+    width: 100%;
+    margin-top: 50px;
+
+}
+
+p1 {
+    margin-left: 100px;
+    width: 50px;
+    height: 10px;
+}
+
+p2{
+    margin-left: 100px;
+    
+
+}
+
+
+h2{
+margin-left: 200px;
+}
+
+ul{
+    margin-left: 200px;
+}
+
+h3{
+   margin-left: 700px;
+    
+   
+    }
+    
+ol{
+       margin-left: 700px;
+      
+        
+    }
+
+table {
+    table-layout: fixed;
+    width: 95%;
+    border-collapse: collapse;
+    border: 5px solid navy;
+    background-color: grey;
+    margin-bottom: 50px;
+}
+
+
+tbody tr {
+    font-family: 'Rock Salt', bold;
+    text-decoration-color: black;
+}
+
+tbody td:hover {
+    
+    text-align: center; 
+    letter-spacing: 2px;
+    padding: 10px;
+}
+

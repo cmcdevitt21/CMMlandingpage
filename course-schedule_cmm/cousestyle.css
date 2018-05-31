@@ -1,0 +1,93 @@
+/* Colby McDevitt; CPSC 247; week 2 course schedule assignemnt; May 23, 2018 */
+html{
+    font-family: Times;
+    background-color: lightblue
+}
+
+table.menu  {
+    border: thin solid darkblue;
+    position: relative;
+    left: 400px;
+    top:0;
+    right: 100px;
+        
+ }
+ table.menu th {border: thin solid black;}
+ table.menu tr {border: thin solid black;}
+ table.menu td {border: thin solid black;}
+ 
+ table.Sched  {
+    border: thin solid darkblue;
+    position: relative;
+    left: 10px;
+    top:0;
+    right: 100px;
+        
+ }
+ table.Sched th {border: thin solid black;}
+ table.Sched tr {border: thin solid black;}
+ table.Sched td {border: thin solid black;}
+ 
+h1 {
+    position:relative;
+    left: 370px;
+}
+h2.Bio{
+    padding-top: 80px;
+    border-bottom: thin solid darkgreen;
+    width: 110px;
+    position:relative;
+    left: 150px;
+    font-family:  "Bradley Hand", cursive;
+}
+ 
+p.b {
+    margin-left: 110px;
+}
+
+table.btable {
+    margin-left: 50px;
+}
+table.btable td{
+    text-align:center;
+    
+}
+h3.cor{
+    padding-top: 10px;
+    padding-bottom: 2px;
+    margin-left: 180px;
+}
+h2.Courses {
+    position:relative;
+    padding-top: 80px;
+    left: 150px;
+    border-bottom: thin solid darkgreen;
+    width: 110px;
+    font-family:  "Impact";
+
+}
+h2.Sched {
+    position:relative;
+    padding-top: 80px;
+    left: 150px;
+    border-bottom: thin solid darkgreen;
+    width: 110px;
+    font-family:  "Bookman Old Style";
+
+}
+
+h2.Feed {
+    position:relative;
+    padding-top: 80px;
+    left: 100px;
+    border-bottom: thin solid darkgreen;
+    width: 280px;
+    font-family:  "Geeza Pro";
+
+}
+
+ul{
+    padding-top: 10px;
+    padding-bottom: 40px;
+    margin-left: 170px;
+}
