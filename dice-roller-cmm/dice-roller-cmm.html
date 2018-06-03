@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang = "en">
+<!--Author: Colby McDevitt
+    Class: Web & Distributed Programming, CPSC 247; 
+     Project: Dice roller; 
+     Session: su18-cpsc-247-lt1
+    Description:  Dice rolling application using JavaScript
+         May 29, 2018 -->
+         <head>
+             <meta charset = "utf-8" />
+             <title>Dice Roller App--CMM</title>
+             <script src ="dice-roller-cmm.js"></script>
+             <link rel="stylesheet" href="dice-roller-cmm.css" type="text/css">
+         </head>
+         <body>
+             <h1 class="welcome">Welcome to the 21 game!</h1>
+             <p class="explain">If you roll a six sided die six times, and it lands on each number, the total of the numbers would be 21<br><br>
+            (6 +5 +4 +3 +2 +1 = 21)<br></br>
+            So the winner of this game is the person that gets the closest to the total of 21!<br></br>
+            Press the roll button to play&#58;</p>
+             <table class="dice">
+            <tr>
+                <td>Player 1:<button type="button" onclick="rolldice()">Roll 'em!</button><br></br></td>
+                <td>Player2:<button type="button" onclick="rolldice2()">Roll 'em!</button><br></br></td>
+            </tr>
+           <tr><td> Dice 1: <input id="roll" type="text" value=""></td>
+            <td> Dice 1: <input id="rolla" type="text" value=""></td></tr>
+            <tr><td>Dice 2: <input id="roll1" type="text" value=""></td>
+                <td>Dice 2: <input id="roll1a" type="text" value=""></td></tr>
+            <tr><td>Dice 3: <input id="roll2" type="text" value=""></td>
+                <td>Dice 3: <input id="roll2a" type="text" value=""></td></tr>
+            <tr><td>Dice 4: <input id="roll3" type="text" value=""></td>
+                <td>Dice 4: <input id="roll3a" type="text" value=""></td></tr>
+            <tr><td>Dice 5: <input id="roll4" type="text" value=""></td>
+                <td>Dice 5: <input id="roll4a" type="text" value=""></td></tr>
+            <tr><td>Dice 6: <input id="roll5" type="text" value=""></td>
+                <td>Dice 6: <input id="roll5a" type="text" value=""></td></tr>
+            <tr><td>Total: <input id="total" type="text" value=""></td>
+                <td>Total: <input id="totala" type="text" value=""></td></tr>
+        </table>
+        <div class="winIt">Who won?<input id="winner" type="text" value=""></div>
+         </body>
+
+</html>

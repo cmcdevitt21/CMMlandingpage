@@ -1,0 +1,32 @@
+/*Author: Colby McDevitt
+    Class: Web & Distributed Programming, CPSC 247; 
+     Project: Dice roller; 
+     Session: su18-cpsc-247-lt1
+    Description:  Dice rolling application using JavaScript
+         May 29, 2018 */
+html{
+    background-color: darkolivegreen;
+}
+h1.welcome{
+    margin-left: 400px;
+}
+
+p.explain{
+    font-family: Arial;
+    height: 200px;
+    width: 600px;
+    margin-left: 300px;
+    padding:20px;
+}
+
+div.winIt{
+    position:relative;
+    top:10px;
+    left: 500px;
+    padding:20px;
+}
+table.dice{
+    position:relative;
+    left:450px;
+    padding:0px;
+}
