@@ -12,8 +12,9 @@
              <script src ="dice-roller-cmm.js"></script>
              <link rel="stylesheet" href="dice-roller-cmm.css" type="text/css">
          </head>
-         <body>
+         <body onload="rollstart()">
              <h1 class="welcome">Welcome to the 21 game!</h1>
+             <p>DICE: <input id="rolls" type="text" value=""> </p>
              <p class="explain">If you roll a six sided die six times, and it lands on each number, the total of the numbers would be 21<br/>
             (6 +5 +4 +3 +2 +1 = 21)<br/>
             So the winner of this game is the person that gets the closest to the total of 21!<br/>

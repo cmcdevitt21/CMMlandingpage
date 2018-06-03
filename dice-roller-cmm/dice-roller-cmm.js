@@ -8,6 +8,9 @@
 
 var diceTotal = [];
 var diceTotal2 = [];
+function rollstart(){
+    document.getElementById("rolls").value = Math.floor(Math.random()*6)+1;
+}
 
 function rolldice(){
     document.getElementById("roll").value = Math.floor(Math.random()*6)+1;
