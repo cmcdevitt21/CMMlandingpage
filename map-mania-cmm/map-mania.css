@@ -1,0 +1,27 @@
+/*Author: Colby McDevitt
+    Class: Web & Distributed Programming, CPSC 247; 
+     Project: Map Mania ; 
+     Session: su18-cpsc-247-lt1
+    Description:  Map app using Google API for map game
+         June 6, 2018 
+         */
+
+    html{background-color:darkgrey;}
+    
+    h1.GameHead{
+        margin-left: 400px;
+    }
+    p.info{
+        margin-left: 400px;
+        padding: 5px;
+    }
+    #cmmMapID{
+        height: 100%;
+        width: 100%;
+    }
+
+    html,body{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }

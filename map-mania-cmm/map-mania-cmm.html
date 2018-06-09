@@ -1,0 +1,26 @@
+<!doctype html>
+<!--Author: Colby McDevitt
+    Class: Web & Distributed Programming, CPSC 247; 
+     Project: Map Mania app v2 
+     Session: su18-cpsc-247-lt1
+    Description:  Map app using Google Maps API to play a game for user 
+    to find favorite locations
+         Jun 6, 2018 -->
+         <html lang = "en">
+        <head>
+                <meta charset = "utf-8">
+                <title>Map-Mania-CMM</title>
+                <script src ="map-mania-cmm.js"></script>
+                <link rel="stylesheet" href="map-mania.css" type="text/css">
+        </head>
+        <body onload="initApp()">
+            <h1 class="GameHead">Find the Places I've Lived Game! by CMM</h1>
+            <p class="info"><button type="button" onclick="gameInfo()">Click for Game Instructions</button></p>
+            Next Hint: <input id="hint" type="text" value ="" size="80" disabled><br/><br/>
+            Your Score: <input id="score" type="text" value ="" size="30" disabled><br/><br/>
+            Cheat Code(where is Lewis located?): <button type="button" onclick="cheatWin()">Romeoville</button>
+            <div id="cmmMapID"></div>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqth6KEgGedlFsN1K5DM55VjSAeNW0W_E&callback=initMap" 
+             ></script>
+        </body>
+         </html>
