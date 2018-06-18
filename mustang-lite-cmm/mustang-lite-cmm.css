@@ -1,0 +1,13 @@
+/*
+    Author:  Colby McDevitt
+    Class:   Web & Distributed Programming 
+    Project: Mustang Lite v1
+    Session: su18-cpsc-24700-lt1
+    Description: This is the starting point for the mustang project
+*/
+h1 { color: red; }
+
+div.IDS{
+    margin-left: 250px;
+    padding: 20px;
+}
