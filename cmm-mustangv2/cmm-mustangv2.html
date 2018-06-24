@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<!--
+    Author:  Colby McDEvitt
+    Class:   Web & Distributed Programming 
+    Project: Mustang v2 
+    Session: su18-cpsc-24700-lt1
+    Description: This adds the feature for a user to add their contact to the mustang json array
+    Date: June 20, 2018
+-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Mustang v2 By CMM</title>
+        <link rel="stylesheet" href="cmm-mustangv2.css">
+        <script src="cmm-mustangv2.js"></script>
+    </head>
+    <body onload="initApplication()">
+        <h1 class="top">Mustang v2 <br/>By Colby McDevitt</h1> 
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td> 
+                    <input id="nameID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input id="emailID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Zip Code</td>
+                <td>
+                    <input id="zipID" type="text" value="" size="20" >
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <input id="cityID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <input id="stateID" type="text" value="" size="20" onkeypress="keyPressed()">
+                </td>
+            </tr>
+            
+            <tr>
+                <td><button type="button"  id="previous" onclick="previous()">Previous</button></td>
+                <td><button type="button" id="next" autofocus onclick="next()">Next</button>
+                </td>
+            <tr>
+                <td><button type="button" onclick="innew()">New</button></td>
+                <td><button type="button" onclick="indelete()">Delete</button>
+            </td>
+            </tr>
+        </table>
+
+        <p id="statusID"></p>
+        <br><br><hr>
+        <table class="newform" id="newform">
+            <tr>
+                <td>First Name:</td>
+                <td> 
+                    <input id="FirstnameID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td> 
+                    <input id="LastnameID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Perfered Name:</td>
+                <td> 
+                    <input id="prefnameID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input id="nemailID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Phone Number:</td>
+                <td>
+                    <input id="phoneID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Zip Code</td>
+                <td>
+                    <input id="nzipID" type="text" value="" size="20"  onblur="getCity()">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <h5>in</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <input id="ncityID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <input id="nstateID" type="text" value="" size="20" onkeypress="keyPressed()">
+                </td>
+            </tr>
+            <tr>
+                <td>Favorite Hobby:</td>
+                <td> 
+                    <input id="hobbyID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="add()">Add</button></td>
+                <td><button type="button" onclick="hidenew()">cancel</button>
+            </td>
+            </tr>
+        </table>
+        <table class="newdel" id="newdel">
+            <tr>
+                <td>Name to Delete: (Note this is case sensitive!)</td>
+            </tr>
+            <tr>
+                    <td>First Name:</td>
+                    <td> 
+                        <input id="FirstnamedelID" type="text" value="" size="20">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td> 
+                        <input id="LastnamedelID" type="text" value="" size="20">
+                    </td>
+                </tr>
+                <tr> <td><button type="button" onclick="remove()">Delete</button>
+                </tr>
+        </table>
+        <br/><hr>
+        Data and Test Functions:<br>
+        Index:<p id="indexID"></p>
+        Contacts:<p id="contactsID"></p>
+    </body>
+</html>
