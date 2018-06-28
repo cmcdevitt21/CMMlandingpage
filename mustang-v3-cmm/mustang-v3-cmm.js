@@ -119,43 +119,17 @@ function next() {
     //***Feature was added****    
 }
 
-function innew() {
-    console.log('add()');
-    document.getElementById("newform").style.visibility='visible';
-
-    // shows new form table
-}
-function hidenew() {
-    console.log('caneled');
-    document.getElementById("newform").style.visibility='hidden';
-
-    // shows new form table
-}
-function indelete() {
-    console.log('delete()');
-    document.getElementById("newdel").style.visibility='visible';
-
-    // shows delete table
-}
-
 function add() {
     console.log('add()');
-    var fName = document.getElementById("FirstnameID").value;
-    var lName = document.getElementById("LastnameID").value;
-    var pName = document.getElementById("prefnameID").value;
-    var email = document.getElementById("nemailID").value;
-    var phone = document.getElementById("phoneID").value;
-    var zipd = document.getElementById("nzipID").value;
-    var city = document.getElementById("ncityID").value;
-    var state = document.getElementById("nstateID").value;
-    var hobby = document.getElementById("hobbyID").value;
-
-
+    var pName = document.getElementById("nameID").value;
+    var email = document.getElementById("emailID").value;
+    var zipd = document.getElementById("zipID").value;
+    var city = document.getElementById("cityID").value;
+    var state = document.getElementById("stateID").value;
     
-    var newContact = {"firstName":fName,"lastNames":lName,"preferredName":pName,"email":email,"phoneNumber":phone,"city":city,"state":state,"zip":zipd,"lat":"","lng":"","favoriteHobby":hobby};
+    var newContact = {"firstName":"","lastNames":"","preferredName":pName,"email":email,"phoneNumber":"","city":city,"state":state,"zip":zipd,"lat":"","lng":"","favoriteHobby":""};
     contactArray.push(newContact);
     sortArr();
-    document.getElementById("newform").style.visibility='hidden';
     
     // Todo: Implement add functionality by inserting new element into array.
     // **feature added***
@@ -164,19 +138,16 @@ function add() {
 function remove() {
     console.log('remove()');
     document.getElementById("newdel").style.visibility='hidden';
-    var tName = document.getElementById("FirstnamedelID").value;
-    var yName = document.getElementById("LastnamedelID").value;
+    var tName = document.getElementById("nameID").value;
     var count = -1;
 
     for(var i=0;i<contactArray.length;i++){
-        var f = contactArray[i].firstName;
         var p = contactArray[i].preferredName;
         var copyContacts = [];
 
-        var t = f.localeCompare(tName);
         var d = p.localeCompare(tName);
         
-        if(t == 0 || d == 0){
+        if(d == 0){
             count = i;
             for(var j=0;j<count;j++){
             copyContacts.push(contactArray[j]);
