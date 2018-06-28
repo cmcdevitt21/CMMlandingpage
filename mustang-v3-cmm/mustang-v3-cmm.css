@@ -20,3 +20,9 @@ Author: Colby McDevitt;
     h2.landlink{
         margin-left: 350px;
     }
+    table.newform{
+        visibility: hidden;
+    }
+    table.newdel{
+        visibility: hidden;
+    }

@@ -88,36 +88,113 @@ function viewCurrentContact() {
 
 function previous() {
     if (currentContactIndex > 0) {
-        currentContactIndex--;
-    }
-    currentContact = contactArray[currentContactIndex];
-    viewCurrentContact();
+       currentContactIndex--;
+       document.getElementById("previous").style.visibility='visible';
+       document.getElementById("next").style.visibility='visible';
+   }else{
+       document.getElementById("previous").disable=true;
+       document.getElementById("previous").style.visibility='hidden';
+   }
+   currentContact = contactArray[currentContactIndex];
+   viewCurrentContact();
 
-    // Todo: Disable previous button when currentContactIndex equal to 0.
+   // Todo: Disable previous button when currentContactIndex equal to 0.
+   //***Feature was added**** 
+   
 }
 
 function next() {
     if (currentContactIndex < (contactArray.length-1)) {
         currentContactIndex++;
+        document.getElementById("next").style.visibility='visible';
+        document.getElementById("previous").style.visibility='visible';
+    }else if(currentContactIndex = (contactArray.length-1)){
+        document.getElementById("next").disable=true;
+        document.getElementById("next").style.visibility='hidden';
     }
     currentContact = contactArray[currentContactIndex];
     viewCurrentContact();
     
     // Todo: Disable next button when there is no next item.
-    // Todo: Save changed items to contacts array and resort array.
+    //***Feature was added****    
+}
+
+function innew() {
+    console.log('add()');
+    document.getElementById("newform").style.visibility='visible';
+
+    // shows new form table
+}
+function hidenew() {
+    console.log('caneled');
+    document.getElementById("newform").style.visibility='hidden';
+
+    // shows new form table
+}
+function indelete() {
+    console.log('delete()');
+    document.getElementById("newdel").style.visibility='visible';
+
+    // shows delete table
 }
 
 function add() {
-    console.log('add()**');
+    console.log('add()');
+    var fName = document.getElementById("FirstnameID").value;
+    var lName = document.getElementById("LastnameID").value;
+    var pName = document.getElementById("prefnameID").value;
+    var email = document.getElementById("nemailID").value;
+    var phone = document.getElementById("phoneID").value;
+    var zipd = document.getElementById("nzipID").value;
+    var city = document.getElementById("ncityID").value;
+    var state = document.getElementById("nstateID").value;
+    var hobby = document.getElementById("hobbyID").value;
 
+
+    
+    var newContact = {"firstName":fName,"lastNames":lName,"preferredName":pName,"email":email,"phoneNumber":phone,"city":city,"state":state,"zip":zipd,"lat":"","lng":"","favoriteHobby":hobby};
+    contactArray.push(newContact);
+    sortArr();
+    document.getElementById("newform").style.visibility='hidden';
+    
     // Todo: Implement add functionality by inserting new element into array.
+    // **feature added***
 }
 
 function remove() {
     console.log('remove()');
+    document.getElementById("newdel").style.visibility='hidden';
+    var tName = document.getElementById("FirstnamedelID").value;
+    var yName = document.getElementById("LastnamedelID").value;
+    var count = -1;
 
+    for(var i=0;i<contactArray.length;i++){
+        var f = contactArray[i].firstName;
+        var p = contactArray[i].preferredName;
+        var copyContacts = [];
+
+        var t = f.localeCompare(tName);
+        var d = p.localeCompare(tName);
+        
+        if(t == 0 || d == 0){
+            count = i;
+            for(var j=0;j<count;j++){
+            copyContacts.push(contactArray[j]);
+            }
+            if(count < contactArray.length-1){
+            for(var k=count+1;k<contactArray.length;k++){
+                    copyContacts.push(contactArray[k]);
+                    } 
+            }else{}
+            contactArray=copyContacts;
+        }else{}
+    }
+    sortArr();
+    
     // Todo: Implement delete functionality by deleting element from array.
+    //****feature added****
 }
+
 
 function ZipToCityState() {
     var zip = document.getElementById("zipID").value
@@ -190,9 +267,26 @@ function loadNextContact(URL) {
         else {
             document.getElementById("statusID").innerHTML = "Contacts Loaded (" + contactURLArray.length + ")";
             viewCurrentContact()
-
+            sortArr();
             //Todo: Sort contacts array.
+            //***feature added */
         }
     }
     contactRequest.send();
+}
+
+function sortArr(){
+    for (var y =0; y<contactArray.length-1; y++){
+
+        if (contactArray[y+1].firstName.localeCompare(contactArray[y].firstName)<0){
+            var t =contactArray[y+1];
+            var s = contactArray[y];
+            contactArray[y]=t;
+            contactArray[y+1]=s;
+            sortArr();
+        }else{
+            ;}
+    }
+    document.getElementById("contactsID").innerHTML = JSON.stringify(contactArray);
+
 }
