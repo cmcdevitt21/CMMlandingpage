@@ -137,17 +137,19 @@ function add() {
 
 function remove() {
     console.log('remove()');
-    document.getElementById("newdel").style.visibility='hidden';
     var tName = document.getElementById("nameID").value;
+    var eName = document.getElementById("emailID").value;
     var count = -1;
 
     for(var i=0;i<contactArray.length;i++){
         var p = contactArray[i].preferredName;
+        var e =contactArray[i].preferredName;
         var copyContacts = [];
 
         var d = p.localeCompare(tName);
+        var f = p.localeCompare(eName);
         
-        if(d == 0){
+        if(d == 0 || f == 0){
             count = i;
             for(var j=0;j<count;j++){
             copyContacts.push(contactArray[j]);
@@ -249,7 +251,7 @@ function loadNextContact(URL) {
 function sortArr(){
     for (var y =0; y<contactArray.length-1; y++){
 
-        if (contactArray[y+1].firstName.localeCompare(contactArray[y].firstName)<0){
+        if (contactArray[y+1].preferredName.localeCompare(contactArray[y].preferredName)<0){
             var t =contactArray[y+1];
             var s = contactArray[y];
             contactArray[y]=t;
