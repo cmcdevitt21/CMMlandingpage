@@ -143,11 +143,11 @@ function remove() {
 
     for(var i=0;i<contactArray.length;i++){
         var p = contactArray[i].preferredName;
-        var e =contactArray[i].preferredName;
+        var e =contactArray[i].email;
         var copyContacts = [];
 
         var d = p.localeCompare(tName);
-        var f = p.localeCompare(eName);
+        var f = e.localeCompare(eName);
         
         if(d == 0 || f == 0){
             count = i;
@@ -158,9 +158,9 @@ function remove() {
             for(var k=count+1;k<contactArray.length;k++){
                     copyContacts.push(contactArray[k]);
                     } 
-            }else{}
+            }else{;}
             contactArray=copyContacts;
-        }else{}
+        }else{;}
     }
     sortArr();
     
