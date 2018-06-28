@@ -42,10 +42,10 @@ function saveContactsToServer() {
         if (this.readyState == 4 && this.status == 200){
             key =JSON.parse(this.responseText);
             console.log('key is: ' + this.responseText);
-            if(key==0){
+            if(key.key==0){
                 saveFile();
                 stop++;
-            }else if(key==1){
+            }else if(key.key==1){
                 saveContactsToServer();
             }else{
                 ;
