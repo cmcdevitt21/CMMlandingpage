@@ -1,7 +1,7 @@
 <?php
     $contacts = $_POST["contacts"];
-    $one->key="1";
-    $zero->key= "0";
+    $one->key=1;
+    $zero->key= 0;
     $oneJ =json_encode($one);
     $zeroJ =json_encode($zero);
     $setKey = fopen("key.json", "w") or die("Unable to open file to write!");
