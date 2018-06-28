@@ -10,6 +10,7 @@ var contactArray = [];
 var loadingContact = 0;
 var currentContactIndex = 0; 
 var key = [];
+var stop = 0;
 
 // Functions
 function initApplication() {
@@ -43,8 +44,11 @@ function saveContactsToServer() {
             console.log('key is: ' + this.responseText);
             if(key==0){
                 saveFile();
-            }else{
+                stop++;
+            }else if(key==1){
                 saveContactsToServer();
+            }else{
+                ;
             } 
         }
     }
