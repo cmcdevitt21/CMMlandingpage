@@ -9,6 +9,7 @@ var contactURLArray = [];
 var contactArray = [];
 var loadingContact = 0;
 var currentContactIndex = 0; 
+var key = [];
 
 // Functions
 function initApplication() {
@@ -35,6 +36,25 @@ function importContacts() {
 
 function saveContactsToServer() {
     console.log("saveContactsToServer()");
+    checkhttp = new XMLHttpRequest();
+    checkhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            key =JSON.parse(this.responseText);
+            console.log('key is: ' + this.responseText);
+            if(key==0){
+                saveFile();
+            }else{
+                saveContactsToServer();
+            } 
+        }
+    }
+    checkhttp.open("GET", "get-key.php", true);
+    checkhttp.send(); 
+}
+
+function saveFile(){
+    console.log("Key is opene to saveContactsToServer()");
+
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
