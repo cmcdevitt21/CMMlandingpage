@@ -37,6 +37,7 @@ function importContacts() {
 
 function saveContactsToServer() {
     console.log("saveContactsToServer()");
+    //check to see if mutex lock is open
     checkhttp = new XMLHttpRequest();
     checkhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
@@ -57,6 +58,7 @@ function saveContactsToServer() {
 }
 
 function saveFile(){
+    
     console.log("Key is opene to saveContactsToServer()");
 
     xmlhttp = new XMLHttpRequest();
