@@ -1,0 +1,22 @@
+/*
+Author: Colby McDevitt;
+         Class: Web & Distributed Programming, CPSC 247; 
+         Project: Mustang v3; 
+         Session: su18-cpsc-247-lt1
+         Description:  loads and saves contacts on the server so the data is not volatile
+         June 26, 2018
+    */
+
+    html
+    {background-color: darkgrey;
+    }
+
+    h1.land{
+        margin-left: 300px;
+        margin-right: 270px;
+        width: 100 px;
+        border-bottom: solid black;
+    }
+    h2.landlink{
+        margin-left: 350px;
+    }
