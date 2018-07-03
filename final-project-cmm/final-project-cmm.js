@@ -97,7 +97,7 @@ function userLogin(){
                 document.getElementById("login").style.visibility="hidden";
                 document.getElementById("newUser").style.visibility="hidden";
                 document.getElementById("scoreBoard").style.visibility="visible";
-
+                sortArr();
 
             }
         }
@@ -147,11 +147,16 @@ function newUser(){
                 getScore(scoreTot);
                 count++;
                 passArr=[];
+                document.getElementById("password").style.visibility="hidden";
+                document.getElementById("login").style.visibility="hidden";
+                document.getElementById("newUser").style.visibility="hidden";
+                document.getElementById("scoreBoard").style.visibility="visible";
+                sortArr();
+
             }
         }else{
             ;
         }
-
    
     }
     if (count !=0){
@@ -159,7 +164,7 @@ function newUser(){
     }else{
         var addUser = {"userName":userName,"passWord":passWord,"score":"0"};
         userArray.push(addUser);
-        
+        sortArr();
         sxmlhttp = new XMLHttpRequest();
         sxmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -178,6 +183,7 @@ function newUser(){
         document.getElementById("login").style.visibility="hidden";
         document.getElementById("newUser").style.visibility="hidden";
         document.getElementById("scoreBoard").style.visibility="visible";
+        sortArr();
 
     }
 }
@@ -186,7 +192,7 @@ function saveScore(){
     var count = 0;
     var score=0;
     for(var i=0;i<scoreTot.length; i++){
-        score=score+scoreTot[i];
+        score=score+Integer.parseInt(scoreTot[i]);
     }
     var userName = document.getElementById("username").value;
 
@@ -196,9 +202,10 @@ function saveScore(){
             userArray = JSON.parse(this.responseText);
         }
     };
-
+    
     xmlhttp.open("GET", "load-users.php", true);
     xmlhttp.send(); 
+
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
         var d = p.localeCompare(userName);
@@ -207,6 +214,7 @@ function saveScore(){
             userArray[i].score=score;
         }
     }
+    sortArr();
     sxmlhttp = new XMLHttpRequest();
     sxmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -303,4 +311,21 @@ function addMarker(cmmarkerProperties){
         getScore(scoreTot);
     });
     
+}
+
+function sortArr(){
+    for (var y =0; y<userArray.length-1; y++){
+
+        if (userArray[y+1].score.localeCompare(userArray[y].score)<0){
+            var t =userArray[y+1];
+            var s = userArray[y];
+            userArray[y]=t;
+            userArray[y+1]=s;
+            sortArr();
+        }else{
+            ;}
+    }
+    document.getElementById("leader").value = userArray[0].score;
+    document.getElementById("second").value = userArray[1].score;
+
 }
