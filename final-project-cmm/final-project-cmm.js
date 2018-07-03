@@ -325,7 +325,10 @@ function sortArr(){
         }else{
             ;}
     }
+    if(userArray.length>0){
+    document.getElementById("leader").value = userArray[0].score;
+    }else if(userArray.length>2){
     document.getElementById("leader").value = userArray[0].score;
     document.getElementById("second").value = userArray[1].score;
-
+    }
 }
