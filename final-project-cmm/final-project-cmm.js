@@ -87,14 +87,17 @@ function userLogin(){
             if(f!=0){
                 document.getElementById("loginMessage").innerHTML="Invalid Password";
                 count++;
+                passArr=[];
             }else if(f==0){
                 scoreTot.push(userArray[i].score);
                 getScore(scoreTot);
                 count++;
+                passArr=[];
                 document.getElementById("password").style.visibility="hidden";
                 document.getElementById("login").style.visibility="hidden";
                 document.getElementById("newUser").style.visibility="hidden";
                 document.getElementById("scoreBoard").style.visibility="visible";
+
 
             }
         }
@@ -105,6 +108,7 @@ function userLogin(){
 
     }else{
         document.getElementById("loginMessage").innerHTML="Invalid UserName, if new user click 'Create Account'";
+        passArr=[];
     }
 
 }
@@ -136,11 +140,13 @@ function newUser(){
             if(f!=0){
                 document.getElementById("loginMessage").innerHTML="User already exist, but invalid Password";
                 count++;
+                passArr=[];
             }else if(f==0){
                 document.getElementById("loginMessage").innerHTML="User already exist, you are logged in";
                 scoreTot.push(userArray[i].score);
                 getScore(scoreTot);
                 count++;
+                passArr=[];
             }
         }else{
             ;
@@ -166,6 +172,7 @@ function newUser(){
     sxmlhttp.send("users=" + JSON.stringify(userArray));
         scoreTot.push(userArray[userArray.length-1].score);
         getScore(scoreTot);
+        passArr=[];
         document.getElementById("loginMessage").innerHTML="User added";
         document.getElementById("password").style.visibility="hidden";
         document.getElementById("login").style.visibility="hidden";
