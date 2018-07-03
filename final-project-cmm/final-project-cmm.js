@@ -192,7 +192,7 @@ function saveScore(){
     var count = 0;
     var score=0;
     for(var i=0;i<scoreTot.length; i++){
-        score=score+Integer.parseInt(scoreTot[i]);
+        score=Integer.parseInt(score)+Integer.parseInt(scoreTot[i]);
     }
     var userName = document.getElementById("username").value;
 
@@ -288,7 +288,7 @@ function getHint(hint){
 function getScore(scoreTot){
     var score=0;
     for(var i=0;i<scoreTot.length; i++){
-        score=score+scoreTot[i];
+        score=Integer.parseInt(score)+Integer.parseInt(scoreTot[i]);
     }
     
     document.getElementById("score").value=score;
