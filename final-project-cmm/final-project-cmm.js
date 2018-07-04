@@ -184,10 +184,11 @@ function newUser(){
         }
     }
     if (count !=0){
-
+        console.log("count not zero");
     }else{
         var addUser = {"userName":username,"passWord":password,"score":"0"};
         userArray.push(addUser);
+        console.log(userArray);
         sortArr();
         console.log(userArray);
         sxmlhttp = new XMLHttpRequest();
@@ -209,7 +210,7 @@ function newUser(){
         document.getElementById("login").style.visibility="hidden";
         document.getElementById("newUser").style.visibility="hidden";
         document.getElementById("scoreBoard").style.visibility="visible";
-        sortArr();
+        
 
     }
 }
