@@ -151,7 +151,8 @@ function newUser(){
 
     newhttp.open("GET", "load-users.php", true);
     newhttp.send();  
-
+    console.log(userArray);
+    
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
