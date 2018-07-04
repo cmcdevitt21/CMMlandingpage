@@ -185,7 +185,7 @@ function newUser(){
         }
    
         }
-    }
+    
     if (count !=0){
         console.log("count not zero");
     }else{
@@ -193,7 +193,7 @@ function newUser(){
         userArray.push(addUser);
         console.log(userArray);
         sortArr();
-        
+    }
         sxmlhttp = new XMLHttpRequest();
         sxmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
