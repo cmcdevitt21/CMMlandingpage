@@ -34,15 +34,15 @@ var cityLived = [
 ];
 function init(){
    
-     xmlhttp = new XMLHttpRequest();
-     xmlhttp.onreadystatechange = function() {
+     starthttp = new XMLHttpRequest();
+     starthttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             userArray = JSON.parse(this.responseText);
         }
     };
 
-    xmlhttp.open("GET", "load-users.php", true);
-    xmlhttp.send();  
+    starthttp.open("GET", "load-users.php", true);
+    starthttp.send();  
     console.log(userArray);
 
 }
@@ -142,15 +142,15 @@ function newUser(){
         passWord=passWord+passArr[i].toString();
         }
     }
-     xmlhttp = new XMLHttpRequest();
-     xmlhttp.onreadystatechange = function() {
+     newhttp = new XMLHttpRequest();
+     newhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             userArray = JSON.parse(this.responseText);
         }
     };
 
-    xmlhttp.open("GET", "load-users.php", true);
-    xmlhttp.send();  
+    newhttp.open("GET", "load-users.php", true);
+    newhttp.send();  
 
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
@@ -221,15 +221,16 @@ function saveScore(){
     }
     var userName = document.getElementById("username").value;
 
-    xmlhttp = new XMLHttpRequest();
-     xmlhttp.onreadystatechange = function() {
+    scorehttp = new XMLHttpRequest();
+     scorehttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             userArray = JSON.parse(this.responseText);
         }
     };
     
-    xmlhttp.open("GET", "load-users.php", true);
-    xmlhttp.send(); 
+    scorehttp.open("GET", "load-users.php", true);
+    scorehttp.send();
+
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
@@ -241,16 +242,18 @@ function saveScore(){
         }
     }
     sortArr();
-    sxmlhttp = new XMLHttpRequest();
-    sxmlhttp.onreadystatechange = function() {
+    console.log(userArray);
+
+    sxmlhttp1 = new XMLHttpRequest();
+    sxmlhttp1.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         console.log('Response: ' + this.responseText);
        
     }
 };
-    sxmlhttp.open("POST", "save-users.php", true);
-    sxmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    sxmlhttp.send("users=" + JSON.stringify(userArray));
+    sxmlhttp1.open("POST", "save-users.php", true);
+    sxmlhttp1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    sxmlhttp1.send("users=" + JSON.stringify(userArray));
     alert("your new score is "+score);
 }
 
@@ -351,6 +354,7 @@ function sortArr(){
         }else{
             ;}
     }
+    console.log(userArray);
     if(userArray.length>0){
     document.getElementById("leader").value = userArray[0].score;
     }else if(userArray.length>1){
