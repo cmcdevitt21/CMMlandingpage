@@ -200,6 +200,7 @@ function newUser(){
     sxmlhttp.open("POST", "save-users.php", true);
     sxmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     sxmlhttp.send("users=" + JSON.stringify(userArray));
+
         scoreTot.push(userArray[userArray.length-1].score);
         getScore(scoreTot);
         passArr=[];
@@ -335,7 +336,7 @@ function addMarker(cmmarkerProperties){
 function sortArr(){
     for (var y =1; y<userArray.length; y++){
 
-        if (userArray[y-1].score.localeCompare(userArray[y].score)<0){
+        if (userArray[y-1].score<userArray[y].score){
             var t =userArray[y-1];
             var s = userArray[y];
             userArray[y]=t;
