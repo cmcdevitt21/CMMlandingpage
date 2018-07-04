@@ -228,6 +228,7 @@ function saveScore(){
      savehttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             userArray = JSON.parse(this.responseText);
+            console.log(userArray);
         }
     };
 
@@ -254,7 +255,7 @@ function saveScore(){
     }
     sortArr();
     console.log(userArray);
-
+    if( userArray.length>1){
     sxmlhttp1 = new XMLHttpRequest();
     sxmlhttp1.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -266,6 +267,7 @@ function saveScore(){
     sxmlhttp1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     sxmlhttp1.send("users=" + JSON.stringify(userArray));
     alert("your new score is "+score);
+    }
 }
 
 function checkAns(){
