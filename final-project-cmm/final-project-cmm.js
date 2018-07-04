@@ -221,16 +221,6 @@ function saveScore(){
     }
     var userName = document.getElementById("username").value;
 
-    scorehttp = new XMLHttpRequest();
-     scorehttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            userArray = JSON.parse(this.responseText);
-        }
-    };
-    
-    scorehttp.open("GET", "load-users.php", true);
-    scorehttp.send();
-
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
