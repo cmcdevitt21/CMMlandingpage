@@ -137,11 +137,11 @@ function userLogin(){
 
 function newUser(){
     var count = 0;
-    var username = document.getElementById("username").value;
+    var userName = document.getElementById("username").value;
     if(passArr.length != 0){
-    var password=passArr[0].toString();
+    var passWord=passArr[0].toString();
     for( var i=1;i<passArr.length;i++){
-        password=password+passArr[i].toString();
+        passWord=passWord+passArr[i].toString();
         }
     }
     newhttp = new XMLHttpRequest();
@@ -159,8 +159,8 @@ function newUser(){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
         var e =userArray[i].passWord;
-        var d = p.localeCompare(username);
-        var f = e.localeCompare(password);
+        var d = p.localeCompare(userName);
+        var f = e.localeCompare(passWord);
 
         if(d==0){
             if(f!=0){
@@ -189,7 +189,7 @@ function newUser(){
     if (count !=0){
         console.log("count not zero");
     }else{
-        var addUser = {"userName":username,"passWord":password,"score":"0"};
+        var addUser = {"userName":userName,"passWord":passWord,"score":"0"};
         userArray.push(addUser);
         console.log(userArray);
         sortArr();
