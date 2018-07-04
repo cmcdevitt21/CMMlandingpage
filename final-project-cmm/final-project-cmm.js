@@ -12,7 +12,7 @@ var W =0;
 
 var cityLived = [
     {"content":"Chicago", "coordinates":{"lat": 41.8781, "lng": -87.6298},"iconImagePath":"redmarker.png", "Hint":"Windy City, Go Cubbies Go!","points":10 },
-    {"content":"Fort Wayne", "coordinates":{"lat": 41.0793, "lng": -85.1394},"iconImagePath":"redmarker.png", "Hint":"Big City NorthEastern Indiana","points":9 },
+    {"content":"Fort Wayne", "coordinates":{"lat": 41.0793, "lng": -85.1394},"iconImagePath":"redmarker.png", "Hint":"Big City North Eastern Indiana","points":9 },
     {"content":"Cedar Rapids", "coordinates":{"lat": 41.9779, "lng": -91.6656},"iconImagePath":"redmarker.png", "Hint":"Big City Eastern Iowa","points":8 },
     {"content":"Fort Collins", "coordinates":{"lat": 40.5853, "lng": -105.0844},"iconImagePath":"redmarker.png", "Hint":"Foot Hills of the CO Rockies","points":7 },
     {"content":"Saint Paul", "coordinates":{"lat": 44.9537, "lng": -93.0900},"iconImagePath":"redmarker.png", "Hint":"One of the Twin Cities and Captial of the state with 10,000 lakes","points":6 },
@@ -200,7 +200,7 @@ function newUser(){
     sxmlhttp.open("POST", "save-users.php", true);
     sxmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     sxmlhttp.send("users=" + JSON.stringify(userArray));
-
+        
         scoreTot.push(userArray[userArray.length-1].score);
         getScore(scoreTot);
         passArr=[];
@@ -215,6 +215,7 @@ function newUser(){
 }
 
 function saveScore(){
+    console.log(userArray);
     savehttp = new XMLHttpRequest();
      savehttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -226,17 +227,18 @@ function saveScore(){
     savehttp.send();  
     console.log(userArray);
     
+
     var count = 0;
     var score=0;
     for(var i=0;i<scoreTot.length; i++){
         score=parseInt(score)+parseInt(scoreTot[i]);
     }
-    var userName = document.getElementById("username").value;
+    var name = document.getElementById("username").value;
 
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
-        var d = p.localeCompare(userName);
+        var d = p.localeCompare(name);
     
         if(d==0){
             userArray[i].score=score;
@@ -357,7 +359,7 @@ function sortArr(){
             ;}
     }
     console.log(userArray);
-    if(userArray.length>0){
+    if(userArray.length=1){
     document.getElementById("leader").value = userArray[0].score;
     }else if(userArray.length>1){
     document.getElementById("leader").value = userArray[0].score;
