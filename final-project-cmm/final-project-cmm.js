@@ -38,15 +38,14 @@ function init(){
      starthttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             userArray = JSON.parse(this.responseText);
+            console.log(this.responseText);
         }
     };
 
     starthttp.open("GET", "load-users.php", true);
     starthttp.send();  
     console.log(userArray);
-    if(userArray.length<1){
-        init();
-    }
+    
 
 }
 
