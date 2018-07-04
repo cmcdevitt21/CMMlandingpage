@@ -190,7 +190,7 @@ function newUser(){
         userArray.push(addUser);
         console.log(userArray);
         sortArr();
-        console.log(userArray);
+        
         sxmlhttp = new XMLHttpRequest();
         sxmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
