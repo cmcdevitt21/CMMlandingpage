@@ -61,11 +61,12 @@ function hideText(){
 function userLogin(){
     var count = 0;
     var userName = document.getElementById("username").value;
+    if(passArr.length != 0){
     var passWord=passArr[0].toString();
     for( var i=1;i<passArr.length;i++){
         passWord=passWord+passArr[i].toString();
+        }
     }
-    window.alert(passWord);
     
      xmlhttp = new XMLHttpRequest();
      xmlhttp.onreadystatechange = function() {
@@ -77,6 +78,7 @@ function userLogin(){
     xmlhttp.open("GET", "load-users.php", true);
     xmlhttp.send();  
 
+    if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
         var e =userArray[i].passWord;
@@ -104,6 +106,7 @@ function userLogin(){
 
    
     }
+    }
     if (count !=0){
 
     }else{
@@ -116,9 +119,11 @@ function userLogin(){
 function newUser(){
     var count = 0;
     var userName = document.getElementById("username").value;
+    if(passArr.length != 0){
     var passWord=passArr[0].toString();
     for( var i=1;i<passArr.length;i++){
         passWord=passWord+passArr[i].toString();
+        }
     }
      xmlhttp = new XMLHttpRequest();
      xmlhttp.onreadystatechange = function() {
@@ -130,6 +135,7 @@ function newUser(){
     xmlhttp.open("GET", "load-users.php", true);
     xmlhttp.send();  
 
+    if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
         var e =userArray[i].passWord;
@@ -158,6 +164,7 @@ function newUser(){
             ;
         }
    
+        }
     }
     if (count !=0){
 
@@ -205,13 +212,14 @@ function saveScore(){
     
     xmlhttp.open("GET", "load-users.php", true);
     xmlhttp.send(); 
-
+    if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
         var d = p.localeCompare(userName);
     
         if(d==0){
             userArray[i].score=score;
+        }
         }
     }
     sortArr();
@@ -327,7 +335,7 @@ function sortArr(){
     }
     if(userArray.length>0){
     document.getElementById("leader").value = userArray[0].score;
-    }else if(userArray.length>2){
+    }else if(userArray.length>1){
     document.getElementById("leader").value = userArray[0].score;
     document.getElementById("second").value = userArray[1].score;
     }
