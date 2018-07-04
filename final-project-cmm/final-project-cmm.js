@@ -32,9 +32,25 @@ var cityLived = [
     {"content":"Athens","coordinates":{"lat": 37.9838, "lng": 23.7275},"iconImagePath":"redmarker.png", "Hint":"Big City in Greece","points":2},
     {"content":"Cape Town","coordinates":{"lat": -33.9249, "lng": 18.4241},"iconImagePath":"redmarker.png", "Hint":"Welcome to South Africa","points":1}
 ];
+function init(){
+   
+     xmlhttp = new XMLHttpRequest();
+     xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            userArray = JSON.parse(this.responseText);
+        }
+    };
+
+    xmlhttp.open("GET", "load-users.php", true);
+    xmlhttp.send();  
+    console.log(userArray);
+
+}
+
 function cheatWin(){
     winCheck(7);
 }
+
 function initMap(){
     cmMap = new google.maps.Map(document.getElementById("cmmMapID"),{center: {lat: 41.6475, lng: -88.0895}, zoom: 6});
     index=Math.floor(Math.random()*10)+Math.floor(Math.random()*10);
