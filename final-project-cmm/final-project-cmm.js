@@ -77,6 +77,7 @@ function userLogin(){
 
     xmlhttp.open("GET", "load-users.php", true);
     xmlhttp.send();  
+    console.log(userArray);
 
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
@@ -172,6 +173,7 @@ function newUser(){
         var addUser = {"userName":userName,"passWord":passWord,"score":"0"};
         userArray.push(addUser);
         sortArr();
+        console.log(userArray);
         sxmlhttp = new XMLHttpRequest();
         sxmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -324,7 +326,7 @@ function addMarker(cmmarkerProperties){
 function sortArr(){
     for (var y =0; y<userArray.length-1; y++){
 
-        if (userArray[y+1].score.localeCompare(userArray[y].score)<0){
+        if (userArray[y+1].score.localeCompare(userArray[y].score)>0){
             var t =userArray[y+1];
             var s = userArray[y];
             userArray[y]=t;
