@@ -144,7 +144,17 @@ function newUser(){
         password=password+passArr[i].toString();
         }
     }
-    
+    newhttp = new XMLHttpRequest();
+    newhttp.onreadystatechange = function() {
+       if (this.readyState == 4 && this.status == 200) {
+           userArray = JSON.parse(this.responseText);
+       }
+   };
+
+   newhttp.open("GET", "load-users.php", true);
+   newhttp.send();  
+   console.log(userArray);
+
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
