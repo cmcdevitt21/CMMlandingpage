@@ -44,7 +44,7 @@ function init(){
 
     starthttp.open("GET", "load-users.php", true);
     starthttp.send();  
-    console.log(userArray);
+    console.log(userArray.toString());
     
 
 }
