@@ -39,6 +39,7 @@ function init(){
         if (this.readyState == 4 && this.status == 200) {
             userArray = JSON.parse(this.responseText);
             console.log(this.responseText);
+            console.log(userArray);
         }
     };
 
@@ -85,16 +86,6 @@ function userLogin(){
         passWord=passWord+passArr[i].toString();
         }
     }
-    
-     xmlhttp = new XMLHttpRequest();
-     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            userArray = JSON.parse(this.responseText);
-        }
-    };
-
-    xmlhttp.open("GET", "load-users.php", true);
-    xmlhttp.send();  
     console.log(userArray);
 
     if(userArray.length>0){
@@ -144,18 +135,7 @@ function newUser(){
         passWord=passWord+passArr[i].toString();
         }
     }
-    newhttp = new XMLHttpRequest();
-    newhttp.onreadystatechange = function() {
-       if (this.readyState == 4 && this.status == 200) {
-           userArray = JSON.parse(this.responseText);
-           console.log(userArray);
-       }
-   };
-
-   newhttp.open("GET", "load-users.php", true);
-   newhttp.send(); 
-   
-
+    
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
@@ -224,18 +204,6 @@ function newUser(){
 
 function saveScore(){
     console.log(userArray);
-    savehttp = new XMLHttpRequest();
-     savehttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            userArray = JSON.parse(this.responseText);
-            console.log(userArray);
-        }
-    };
-
-    savehttp.open("GET", "load-users.php", true);
-    savehttp.send();  
-    console.log(userArray);
-    
     var count = 0;
     var score=0;
     for(var i=0;i<scoreTot.length; i++){
