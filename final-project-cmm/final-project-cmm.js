@@ -343,13 +343,13 @@ function addMarker(cmmarkerProperties){
 }
 
 function sortArr(){
-    for (var y =0; y<userArray.length-1; y++){
+    for (var y =1; y<userArray.length; y++){
 
-        if (userArray[y+1].score.localeCompare(userArray[y].score)>0){
-            var t =userArray[y+1];
+        if (userArray[y-1].score.localeCompare(userArray[y].score)<0){
+            var t =userArray[y-1];
             var s = userArray[y];
             userArray[y]=t;
-            userArray[y+1]=s;
+            userArray[y-1]=s;
             sortArr();
         }else{
             ;}
