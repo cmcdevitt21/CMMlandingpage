@@ -220,16 +220,6 @@ function newUser(){
 }
 
 function saveScore(){
-    savehttp = new XMLHttpRequest();
-     savehttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            userArray = JSON.parse(this.responseText);
-        }
-    };
-
-    savehttp.open("GET", "load-users.php", true);
-    savehttp.send();  
-    console.log(userArray);
     
     var count = 0;
     var score=0;
