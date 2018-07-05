@@ -1,0 +1,28 @@
+
+html{background-color:darkgrey;}
+    
+h1.GameHead{
+    margin-left: 300px;
+}
+p.info{
+    margin-left: 400px;
+    padding: 5px;
+}
+#cmmMapID{
+    height: 100%;
+    width: 100%;
+}
+
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+table.scoreBoard{
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+
