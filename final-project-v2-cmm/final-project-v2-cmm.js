@@ -80,6 +80,8 @@ function userLogin(){
     for( var i=1;i<passArr.length;i++){
         passWord=passWord+passArr[i].toString();
         }
+    }else{
+        var passWord=document.getElementById("password").value;
     }
     
      xmlhttp = new XMLHttpRequest();
@@ -141,6 +143,8 @@ function newUser(){
     for( var i=1;i<passArr.length;i++){
         passWord=passWord+passArr[i].toString();
         }
+    }else{
+        var passWord=document.getElementById("password").value;
     }
      newhttp = new XMLHttpRequest();
      newhttp.onreadystatechange = function() {
@@ -155,7 +159,6 @@ function newUser(){
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
-       
         var d = p.localeCompare(userName);
         
 
