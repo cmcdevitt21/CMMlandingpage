@@ -96,11 +96,13 @@ function userLogin(){
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
-        var e =userArray[i].passWord;
+       
         var d = p.localeCompare(userName);
-        var f = e.localeCompare(passWord);
+        
 
         if(d==0){
+            var e =userArray[i].passWord;
+            var f = e.localeCompare(passWord);
             if(f!=0){
                 document.getElementById("loginMessage").innerHTML="Invalid Password";
                 count++;
@@ -153,11 +155,13 @@ function newUser(){
     if(userArray.length>0){
     for(var i=0;i<userArray.length;i++){
         var p = userArray[i].userName;
-        var e =userArray[i].passWord;
+       
         var d = p.localeCompare(userName);
-        var f = e.localeCompare(passWord);
+        
 
         if(d==0){
+            var e =userArray[i].passWord;
+            var f = e.localeCompare(passWord);
             if(f!=0){
                 document.getElementById("loginMessage").innerHTML="User already exist, but invalid Password";
                 count++;
